@@ -16,13 +16,21 @@
         <span>Methods: ${ showName() }</span>
 {#        {% endverbatim %}#}
         <div class="">
-            <a v-bind:href="href" v-bind:style="customStyle">Vue Docs</a>
+            <a v-bind:href="href" v-bind:style="customStyle">Vue Docs</a> <br>
+            <p v-html="html"></p>
         </div>
         <h4>Number Increment Decrement</h4>
         <div>
-            <button @click="decrement">-</button>
+            <button @click="decrement($event, 1);">-1</button>
+            <button @click="decrement($event, 2);">-2</button>
             <input type="text" v-bind:value="number">
-            <button v-on:click="increment">+</button>
+            <button v-on:click="increment($event, 1);">+1</button>
+            <button v-on:click="increment($event, 2);">+2</button>
+        </div>
+        <h4>Input on chnage value show</h4>
+        <div>
+            <input type="text" v-model="visitor">
+            <p>This is change value: ${ visitor }</p>
         </div>
     </div>
 </div>
