@@ -21,6 +21,13 @@ new Vue({
         decrement: function (event, amount) {
             this.number = this.number - amount;
             console.log(event);
+        },
+        handleKeyup: function (e) {
+            console.log((e.target.value));
+        },
+        handleFormSubmit: function (e) {
+            // e.preventDefault();
+            console.log('Form Submitted');
         }
     }
 });

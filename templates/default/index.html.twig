@@ -32,6 +32,13 @@
             <input type="text" v-model="visitor">
             <p>This is change value: ${ visitor }</p>
         </div>
+        <div class="mouseEventHandler">
+            <h4>Event Handler</h4>
+            <form @submit.prevent="handleFormSubmit">
+                <input type="text" @keyup="handleKeyup">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
     </div>
 </div>
 {% endblock %}
