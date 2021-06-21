@@ -9,38 +9,48 @@
 
 {% block body %}
 
-<div class="">
-    <div id="app">
-{#        {% verbatim %}#}
-        <span>Variable: ${ name }</span><br>
-        <span>Methods: ${ showName() }</span>
-{#        {% endverbatim %}#}
-        <div class="">
-            <a v-bind:href="href" v-bind:style="customStyle">Vue Docs</a> <br>
-            <p v-html="html"></p>
-        </div>
-        <h4>Number Increment Decrement</h4>
-        <div>
-            <button @click="decrement($event, 1);">-1</button>
-            <button @click="decrement($event, 2);">-2</button>
-            <input type="text" v-bind:value="number">
-            <button v-on:click="increment($event, 1);">+1</button>
-            <button v-on:click="increment($event, 2);">+2</button>
-        </div>
-        <h4>Input on chnage value show</h4>
-        <div>
-            <input type="text" v-model="visitor">
-            <p>This is change value: ${ visitor }</p>
-        </div>
-        <div class="mouseEventHandler">
-            <h4>Event Handler</h4>
-            <form @submit.prevent="handleFormSubmit">
-                <input type="text" @keyup="handleKeyup">
-                <button type="submit">Submit</button>
-            </form>
+    <div class="">
+        <div id="app">
+            {# {% verbatim %} #}
+            <span>Variable: ${ name }</span><br>
+            <span>Methods: ${ showName() }</span>
+            {# {% endverbatim %} #}
+            <div class="">
+                <a v-bind:href="href" v-bind:style="customStyle">Vue Docs</a> <br>
+                <p v-html="html"></p>
+            </div>
+            <h4>Number Increment Decrement</h4>
+            <div>
+                <button @click="decrement($event, 1);">-1</button>
+                <button @click="decrement($event, 2);">-2</button>
+                <input type="text" v-bind:value="number">
+                <button v-on:click="increment($event, 1);">+1</button>
+                <button v-on:click="increment($event, 2);">+2</button>
+            </div>
+            <h4>Input on chnage value show</h4>
+            <div>
+                <input type="text" v-model="visitor">
+                <p>This is change value: ${ visitor }</p>
+            </div>
+            <div class="mouseEventHandler">
+                <h4>Event Handler</h4>
+                <form @submit.prevent="handleFormSubmit">
+                    <input type="text" @keyup="handleKeyup">
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="mouseEventHandler">
+                <h4>Plus and Square</h4>
+                <input type="text" v-model.number="getInput">
+                <button type="button"  @click="getDouble">Get Double</button>
+                <button type="button" @click="getSquare">Get Square</button>
+                <button type="button" @click="addTen">Add 10</button>
+                <button type="button" @click="reset">Reset</button>
+                <p>Entered Number: ${ getInput }</p>
+                <p>Result: ${ result }</p>
+            </div>
         </div>
     </div>
-</div>
 {% endblock %}
 
 

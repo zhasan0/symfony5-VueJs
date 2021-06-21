@@ -8,7 +8,9 @@ new Vue({
         customStyle: {color: 'gray'},
         number: 0,
         visitor: 'Zahid Hasan',
-        html: '<a href="https://google.com">Google</a>'
+        html: '<a href="https://google.com">Google</a>',
+        getInput: '',
+        result: ''
     },
     methods: {
         showName: function () {
@@ -28,6 +30,19 @@ new Vue({
         handleFormSubmit: function (e) {
             // e.preventDefault();
             console.log('Form Submitted');
+        },
+        getDouble: function () {
+            this.result = this.getInput * 2;
+        },
+        getSquare: function () {
+            this.result = this.getInput * this.getInput;
+        },
+        addTen: function () {
+          this.result = this.getInput + 10;
+        },
+        reset: function () {
+            this.result = "";
+            this.getInput = "";
         }
     }
 });
